@@ -1,0 +1,62 @@
+def Main_room():
+    print('You are at the main room.')
+    way= input('You have two ways to go. Would you go right or left? ')
+    if way.lower()== 'right':
+        Coffin_room()
+    elif way.lower()== 'left':
+        Treasury_room()
+    else:
+        print('Invalid input. Enter right or left')
+        Main_room()
+
+def Coffin_room():
+    print('You have reached an empty, dark room. While trying to figure your way out, you knock over a pot. The sound wakes the soul of the mummy.')
+    options= input('You have three options: give the treasure/ fight/ flee. Which one do you choose? ')
+    options= options.lower()
+    if options== 'give the treasure':
+        print('You have lost your oppurtunity of finding the gold coins but you have also saved your life')
+    elif options== 'fight':
+        print('The mummy awakens her army of dead and they defeat you. You have lost')
+    elif options== 'flee':
+        print('On your way out you manage to bump into a lot many pots, slowing down the mummy as she tries to catch you.')
+        Main_room()
+    else:
+        print('Invalid input. Choose from the 3 given options!')
+        Coffin_room()
+
+def Treasury_room():
+    print('You reach the treasury room and find chests full of gold coins, and jewels. You fill your bags and pockets with as many treasures as you can.')
+    sword= input('While doing so, you discover a cursed sword. Would you like to pick it up? Take or leave: ')
+    sword= sword.lower()
+    if sword== 'take':
+        print('You have taken the cursed sword.')
+        witch= input('Suddenly, you hear a crow squacking and turn to see a witch behind you. Would you fight her or flee? ')
+        witch= witch.lower()
+        if witch== 'fight':
+            print('You stab the witch with the cursed sword. You have won the game!')
+        elif witch == 'flee':
+            print('You run as fast as you can')
+            Main_room()
+        else:
+            print('Invalid input. Enter fight or flee.')
+            Treasure_room()
+    elif sword=='leave':
+        print('You have left the cursed sword')
+        witch= input('Suddenly, you hear a crow squacking and turn to see a witch behind you. Would you fight her or flee? ')
+        witch= witch.lower()
+        if witch== 'fight':
+            print('the witch kills you. You have lost the game.')
+        elif witch == 'flee':
+            print('You run as fast as you can')
+            Main_room()
+        else:
+            print('Invalid input. Enter fight or flee')
+            Treasure_room()
+    else:
+        print('Invalid input. Enter take or leave.')
+        Treasure_room()
+
+print('Welcome to the ancient pyramids of Egypt.\nWhile in a find for treasure you end up discovering a mysterious lost pyramid.\nYou think that the pyramid holds prized trasures so you plan to carry your crown which can help you locate the gold coins.')
+Main_room()    
+
+    
